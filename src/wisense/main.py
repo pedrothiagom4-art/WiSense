@@ -1,21 +1,29 @@
 import time
 
-from wisense.capture import SimulatorCapture
+from wisense.scanner import WifiScanner
 
 
 def main():
 
-    capture = SimulatorCapture()
-
-    print("WiSense v0.1")
+    scanner = WifiScanner()
 
     while True:
 
-        sample = capture.read()
+        print("=" * 50)
 
-        print(sample)
+        networks = scanner.scan()
 
-        time.sleep(0.5)
+        for network in networks:
+
+            print(
+
+                f"{network['ssid']:<25}"
+
+                f"{network['signal']:>5} dBm"
+
+            )
+
+        time.sleep(5)
 
 
 if __name__ == "__main__":
