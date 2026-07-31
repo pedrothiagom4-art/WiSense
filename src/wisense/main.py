@@ -1,38 +1,19 @@
 import time
 
-from wisense.exporters import CsvExporter
-from wisense.simulation import SignalSimulator
+from wisense.sources import SimulatorSource
 
 
 def main():
 
-    simulator = SignalSimulator()
+    source = SimulatorSource()
 
-    exporter = CsvExporter()
+    while True:
 
-    samples = []
+        sample = source.read()
 
-    print("WiSense v0.1\n")
+        print(sample)
 
-    try:
-
-        for _ in range(100):
-
-            sample = simulator.generate()
-
-            samples.append(sample)
-
-            print(sample)
-
-            time.sleep(0.2)
-
-    except KeyboardInterrupt:
-
-        print("\nInterrompido.")
-
-    path = exporter.export(samples)
-
-    print(f"\nCSV salvo em:\n{path.resolve()}")
+        time.sleep(0.5)
 
 
 if __name__ == "__main__":
