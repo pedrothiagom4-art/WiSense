@@ -1,19 +1,28 @@
 import time
 
-from wisense.sources import SimulatorSource
+from wisense.detector import ThresholdDetector
+from wisense.simulation import SignalSimulator
 
 
 def main():
 
-    source = SimulatorSource()
+    simulator = SignalSimulator()
+
+    detector = ThresholdDetector()
 
     while True:
 
-        sample = source.read()
+        sample = simulator.generate()
 
-        print(sample)
+        detected = detector.detect(sample.rssi)
 
-        time.sleep(0.5)
+        print(
+            f"{sample.rssi:6.2f} dBm | "
+            f"Simulado: {sample.movement} | "
+            f"Detectado: {detected}"
+        )
+
+        time.sleep(0.3)
 
 
 if __name__ == "__main__":
