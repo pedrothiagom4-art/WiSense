@@ -1,0 +1,2 @@
+[console_scripts]
+wisense = wisense.main:main
