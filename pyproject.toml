@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wisense"
+version = "0.1.0"
+description = "Sistema experimental para detecção de movimento por variações do sinal Wi-Fi."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Pedro Thiago" }
+]
+
+[project.scripts]
+wisense = "wisense.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: wisense
+Version: 0.1.0
+Summary: Sistema experimental para detecção de movimento por variações do sinal Wi-Fi.
+Author: Pedro Thiago
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
