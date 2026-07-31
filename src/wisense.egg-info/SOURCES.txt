@@ -1,3 +1,4 @@
+README.md
 pyproject.toml
 src/wisense/__init__.py
 src/wisense/main.py
@@ -7,4 +8,5 @@ src/wisense.egg-info/dependency_links.txt
 src/wisense.egg-info/entry_points.txt
 src/wisense.egg-info/top_level.txt
 src/wisense/models/__init__.py
+src/wisense/models/signal_sample.py
 src/wisense/simulation/__init__.py
